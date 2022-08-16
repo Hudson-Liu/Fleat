@@ -6,7 +6,7 @@ This repository hosts the source code of the Fleat library.
 Read the documentation at [joebama.io](https://joebamabinladen.com).
 
 # About Fleat
-Traditional hyperparameter tuners suffer from their long runtimes and high resource consumption; even the best tuners (such as the Hyperband Tuner) require training the model 2 or 3 times over. Although not as generalizable as hyperparameter tuners, **Fleat attempts to make learning rate optimization much faster and less resource intensive.** On 10 different test models, Fleat was [insert percentage accuracy]% accurate compared to a Keras Hyperband tuner, while being [insert accuracy]x faster. These results can be replicated in the "test.py" file.
+Traditional hyperparameter tuners suffer from their long runtimes and high resource consumption; even the best tuners (such as the Hyperband Tuner) require training the model 2 or 3 times over. Although not as generalizable as hyperparameter tuners, **Fleat makes learning rate optimization much faster and less resource intensive.** On 10 different test models, Fleat was [insert percentage accuracy]% accurate compared to a Keras Hyperband tuner, while being [insert accuracy]x faster. These results can be replicated in the "test.py" file.
 
 # Install Fleat
 Fleat works with the usual pip install:
