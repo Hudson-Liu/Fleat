@@ -1,12 +1,16 @@
 # Fleat: A Fast and Lightweight Learning Rate Tuner
-Fleat: **F**ast **LEA**rning rate **T**uner
+FLEAT: **F**ast **LEA**rning rate **T**uner
 
 This repository hosts the source code of the Fleat library.
 
-Read the documentation at [joebama.io](https://joebamabinladen.com).
+Read the full documentation at [joebama.io](https://joebamabinladen.com).
 
 # About Fleat
+Fleat is a fast and lightweight learning rate tuner for Keras models.
+
 Traditional hyperparameter tuners suffer from their long runtimes and high resource consumption; even the best tuners (such as the Hyperband Tuner) require training the model 2 or 3 times over. Although not as generalizable as hyperparameter tuners, **Fleat makes learning rate optimization much faster and less resource intensive.** On 10 different test models, Fleat was [insert percentage accuracy]% accurate compared to a Keras Hyperband tuner, while being [insert accuracy]x faster. These results can be replicated in the "test.py" file.
+
+Unlike most other tuners (such as Keras Tuner), Fleat solely supports learning rate prediction for CNNs. Although this cuts down on the possible use cases for Fleat, it also ensures that Fleat is exceptionally fast at it's task. Fleat is intended to be used alongside other tuners, with Fleat helping shave a few hours off of the computational time.
 
 # Install Fleat
 Fleat works with the usual pip install:
