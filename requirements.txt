@@ -1,4 +1,5 @@
 #Fleat support goes back to 2020
 "tensorflow">=2.2.0 #TODO Verify if this is true
 "keras">=2.4.0 #First version to support Tensorflow 2.2.0
-"numpy">=1.19.0 #Around the same time period as Tensorflow 2.2.0
+"numpy">=1.19.0 #Around the same time period as TF 2.2
+"opencv-python">=4.3.0.36 #Around the same time period as TF 2.2
