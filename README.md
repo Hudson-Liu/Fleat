@@ -1,4 +1,4 @@
-# Fleat: A Faster Learning Rate Tuner
+# Fleat: A Fast and Lightweight Learning Rate Tuner
 Fleat: **F**ast **LEA**rning rate **T**uner
 
 This repository hosts the source code of the Fleat library.
