@@ -1,6 +1,6 @@
 """Fast Learning Rate Tuner"""
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 # Allows PyPi website to access README.md
 with open("README.md", 'r') as f:
@@ -9,14 +9,14 @@ with open("README.md", 'r') as f:
 setup(
     name="Fleat",
     version="0.9.0",
-    description="A learning rate tuner that predicts learning rates without running the model.",
+    description="A fast and lightweight learning rate tuner for Keras models.",
     license="MIT License",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Hudson Liu",
     author_email="hudsonliu0@gmail.com",
     url="https://hudson-liu.github.io/fleat",
-    #download_url = [insert github release link here]
+    #download_url = "[insert github release link here]",
     packages=["lr_predictor", "preprocessor"],
     keywords=["keras", "machine learning", "tensorflow", "image classification", "deep learning", "hyperparameters", "neural networks", "fleat"],
     classifiers=[
@@ -28,8 +28,10 @@ setup(
        "Operating System :: OS Independent"
     ],
     install_requires = [
-        "opencv-python",
-        "keras"
+        "tensorflow",
+        "keras",
+        "numpy",
+        "opencv-python"
     ],
     
     python_requires=">=3.6",
