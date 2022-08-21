@@ -18,6 +18,13 @@ Unlike most other tuners (such as Keras Tuner), Fleat solely supports learning r
 Although this cuts down on the possible use cases for Fleat, it also ensures that Fleat is exceptionally fast at it's task. 
 Fleat is intended to be used alongside other tuners, with Fleat's purpose being to help shave a few minutes or hours off of the computational time.
 
+How it works
+============
+
+Fleat uses a pretrained predictor model that takes in **100 sample images, the type of optimizer, and the loss**, as input. 
+The sample images do not need to be preprocessed, Fleat automatically converts any image set following the shape **(a, x, y, c)** (with a being the number of images, 
+x and y being the dimensions, and c being the color channels) to shape **(100, 224, 224, 1)**. The predictor model outputs a predicted best learning rate.
+
 Install Fleat
 =============
 
@@ -64,13 +71,6 @@ Fleat (currently) works only for simple CNNs using default Keras optimizers. The
 * Adamax
 * Nadam
 * Ftrl
-
-How it works
-============
-
-Fleat uses a pretrained predictor model that takes in **100 sample images, the type of optimizer, and the loss**, as input. 
-The sample images do not need to be preprocessed, Fleat automatically converts any image set following the shape **(a, x, y, c)** (with a being the number of images, 
-x and y being the dimensions, and c being the color channels) to shape **(100, 224, 224, 1)**. The predictor model outputs a predicted best learning rate.
 
 Dependencies
 ============

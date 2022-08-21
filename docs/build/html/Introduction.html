@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Fleat Documentation" href="Fleat%20Documentation.html" />
-    <link rel="prev" title="Welcome to Fleat’s documentation!" href="index.html" /> 
+    <link rel="prev" title="The Fleat Python Library" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,10 +44,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#about-fleat">About Fleat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-it-works">How it works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-fleat">Install Fleat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fleat-syntax">Fleat Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#applications">Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-it-works">How it works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 </ul>
 </li>
@@ -92,6 +92,12 @@ These results can be replicated in the “test.py” file.</p>
 Although this cuts down on the possible use cases for Fleat, it also ensures that Fleat is exceptionally fast at it’s task.
 Fleat is intended to be used alongside other tuners, with Fleat’s purpose being to help shave a few minutes or hours off of the computational time.</p>
 </section>
+<section id="how-it-works">
+<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this heading"></a></h2>
+<p>Fleat uses a pretrained predictor model that takes in <strong>100 sample images, the type of optimizer, and the loss</strong>, as input.
+The sample images do not need to be preprocessed, Fleat automatically converts any image set following the shape <strong>(a, x, y, c)</strong> (with a being the number of images,
+x and y being the dimensions, and c being the color channels) to shape <strong>(100, 224, 224, 1)</strong>. The predictor model outputs a predicted best learning rate.</p>
+</section>
 <section id="install-fleat">
 <h2>Install Fleat<a class="headerlink" href="#install-fleat" title="Permalink to this heading"></a></h2>
 <p>Fleat works with the usual pip install:</p>
@@ -134,12 +140,6 @@ Fleat is intended to be used alongside other tuners, with Fleat’s purpose bein
 <li><p>Ftrl</p></li>
 </ul>
 </section>
-<section id="how-it-works">
-<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this heading"></a></h2>
-<p>Fleat uses a pretrained predictor model that takes in <strong>100 sample images, the type of optimizer, and the loss</strong>, as input.
-The sample images do not need to be preprocessed, Fleat automatically converts any image set following the shape <strong>(a, x, y, c)</strong> (with a being the number of images,
-x and y being the dimensions, and c being the color channels) to shape <strong>(100, 224, 224, 1)</strong>. The predictor model outputs a predicted best learning rate.</p>
-</section>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
 <ul class="simple">
@@ -155,7 +155,7 @@ x and y being the dimensions, and c being the color channels) to shape <strong>(
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Fleat’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="The Fleat Python Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="Fleat%20Documentation.html" class="btn btn-neutral float-right" title="Fleat Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
