@@ -1,9 +1,11 @@
 # Fleat: A Fast and Lightweight Learning Rate Tuner
 FLEAT: **F**ast **LEA**rning rate **T**uner
 
+![The Fleat Library Logo](https://hudson-liu.github.io/fleat/build/html/_static/Fleat%20Logo%20White.png)
+
 This repository hosts the source code of the Fleat library.
 
-Read the full documentation at [joebama.io](https://joebamabinladen.com).
+Read the full documentation at [hudson-liu.github.io/fleat](https://hudson-liu.github.io/fleat/build/html/index.html).
 
 # About Fleat
 Fleat is a fast and lightweight learning rate tuner for Keras models.
