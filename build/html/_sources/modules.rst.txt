@@ -1,0 +1,7 @@
+Fleat Documentation
+===================
+
+.. toctree::
+   :maxdepth: 4
+
+   Fleat Documentation
