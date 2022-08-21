@@ -1,7 +1,8 @@
 # Fleat: A Fast and Lightweight Learning Rate Tuner
 FLEAT: **F**ast **LEA**rning rate **T**uner
 
-![The Fleat Library Logo](https://hudson-liu.github.io/fleat/build/html/_static/Fleat%20Logo%20White.png)
+![The Fleat Library Logo](https://hudson-liu.github.io/fleat/build/html/_static/Fleat%20Logo%20White.png#gh-dark-mode-only)
+![What kind of weirdo uses light mode](https://hudson-liu.github.io/fleat/build/html/_static/Fleat%20Logo.png#gh-light-mode-only)
 
 This repository hosts the source code of the Fleat library.
 
