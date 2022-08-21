@@ -1,0 +1,19 @@
+*******************
+Fleat Documentation
+*******************
+
+fleat.lr\_predictor module
+==========================
+
+.. automodule:: fleat.lr_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fleat.preprocessor module
+=========================
+
+.. automodule:: fleat.preprocessor
+   :members:
+   :undoc-members:
+   :show-inheritance:
