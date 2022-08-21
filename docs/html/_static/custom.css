@@ -17,3 +17,7 @@ a {
 a:visited {
     color: #E17A4F;
 }
+
+.wy-menu-vertical a {
+    color: #E17A4F;
+}
