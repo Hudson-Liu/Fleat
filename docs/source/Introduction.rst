@@ -78,4 +78,11 @@ Dependencies
 * TensorFlow >= 2.2.0
 * Keras >= 2.4.0
 * NumPy >= 1.19.0
-* OpenCV Python >= 4.3.0.36
+* OpenCV Python >= 4.3.0
+
+GitHub Repo
+============
+
+The source code for the Fleat library itself can be found here: https://github.com/Hudson-Liu/fleat
+
+Since the library itself is just a model loader, the code used to train the model and all additional required files can be found here: https://github.com/Hudson-Liu/Fleat-Model-Trainer
