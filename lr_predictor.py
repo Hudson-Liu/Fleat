@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
-"""lr_predictor.py: Houses getLR()"""
+"""lr_predictor.py: Houses the getLR() method"""
 
 __author__ = "Hudson Liu"
 
 import tensorflow as tf
 import keras
 import numpy as np
-from preprocessor import preprocess_images
+from fleat.preprocessor import preprocess_images
 import pickle
+import os
 
 def getLR(sample_data: np.ndarray, model: keras.Model, optimizer: str) -> float:
     """
@@ -22,31 +23,34 @@ def getLR(sample_data: np.ndarray, model: keras.Model, optimizer: str) -> float:
     :param model: A fully built Keras model, does not need to be compiled.
     :type model: keras.Model
     
-    :param optimizer: A string representing a valid Keras optimizer. The following are the only valid Keras optimizers:
-        - SGD
-        - RMSprop
-        - Adam
-        - Adadelta
-        - Adagrad
-        - Adamax
-        - Nadam
-        - Ftrl
-    
-    Uppercase or lowercase does not matter.
-    Custom optimizers are not currently supported by Fleat.
+    :param optimizer: A string representing a valid Keras optimizer. The following are the only valid Keras optimizers:\n
+        - SGD\n
+        - RMSprop\n
+        - Adam\n
+        - Adadelta\n
+        - Adagrad\n
+        - Adamax\n
+        - Nadam\n
+        - Ftrl\n
+        Uppercase or lowercase does not matter.\n
+        Custom optimizers are not currently supported by Fleat.
     :type optimizer: str
     
     :return: A learning rate
     :rtype: float
     
+    :raises ValueError: if the input image's color channels are not either None, 1, or 3
     :raises ValueError: if the optimizer is not a valid Keras optimizer
     """
+    #Get modulepath (where this package was installed) for importing files later
+    module_path = os.path.dirname(os.path.realpath(__file__))
+    
     #Preprocesses the images
     processed = preprocess_images(sample_data)
     
     #Normalize parameter number
     param_num = model.count_params()
-    with open("min_max", "rb") as fp:
+    with open(f"{module_path}\\min_max", "rb") as fp:
         min_max = pickle.load(fp)
     normalized_params = (param_num - min_max[0])/(min_max[1] - min_max[0])
     
@@ -63,9 +67,19 @@ def getLR(sample_data: np.ndarray, model: keras.Model, optimizer: str) -> float:
     if len(onehot) == 0:
         raise ValueError(f"The optimizer string is expected to be a valid Keras optimizer, instead received {optimizer}.")
     
+    #Concatenate all the data about the model
+    model_data = [*onehot, normalized_params]
+    
+    #Convert lists to numpy arrays and add a dimension to each array
+    processed = np.array([processed])
+    model_data = np.array([model_data])
+    
     #Load model and run prediction
-    predictor = tf.saved_model.load("./Fleat_model/")
-    learning_rate = predictor.predict([processed, normalized_params, onehot])
+    predictor = tf.keras.models.load_model(f"{module_path}\\Fleat_model")
+    learning_rate = predictor.predict([processed, model_data])
+    
+    #Reverse the scaling
+    learning_rate = learning_rate[0][0] / 1000
     
     #Return prediction
     return learning_rate
