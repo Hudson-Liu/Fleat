@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""preprocessor.py: Preprocesses any unprocessed input data."""
+"""preprocessor.py: Houses the preprocess_images() method, which preprocesses any unprocessed input data."""
 
 __author__ = "Hudson Liu"
 
